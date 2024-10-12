@@ -68,7 +68,7 @@ const UpdatePrompt = () => {
   }
 
   return (
-    <Suspense>
+    <>
       <Form
       post={post}
       setPost={setPost}
@@ -76,8 +76,15 @@ const UpdatePrompt = () => {
       handleSubmit={updatePrompt}
       type={`Update`}      
       ></Form>
-    </Suspense>
+    </>
+  )
+}
+const Page = () => {
+  return (
+      <Suspense>
+          <UpdatePrompt />
+      </Suspense>
   )
 }
 
-export default UpdatePrompt
+export default Page
