@@ -24,7 +24,6 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <h1 className="head_text text-left  w-full mb-8">Feed</h1>
       {/* <form className="relative w-full flex-center">
         <input 
         type="text"

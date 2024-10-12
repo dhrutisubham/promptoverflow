@@ -10,8 +10,9 @@ const Nav = () => {
 
     const [isUserLoggedIn, setIsUserLoggedIn]=useState(true);
     const handleSignOut=()=>{
-        console.log("User Signed Out Successfully");
-        setIsUserLoggedIn(false);
+        const confirmationUser=confirm("Are you sure you want to Sign out?");
+        if(confirmationUser)
+            signOut();
     }
 
     const {data:session}= useSession();
@@ -80,10 +81,9 @@ const Nav = () => {
                         src={session?.user.image}
                         width={37}
                         height={37}
-                        className="object-contain"
+                        className="object-contain rounded-full"
                         alt="Navigation Bar Logo"
                         onClick={()=>{setToggleDownState((prev)=>!prev)}}
-                        className="rounded-full"
                     ></Image>
 
                     { toggleDownState && (
