@@ -2,7 +2,7 @@ import PromptCard from "./PromptCard";
 
 const PromptCardList=({data, handleTagClick, handleEdit, handleDelete})=>{
     return (
-      <div className="mt-16 prompt_layout">
+      <div className="mt-2 prompt_layout">
         {
           data && data.map(prompt=>(
             <PromptCard

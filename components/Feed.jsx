@@ -7,7 +7,7 @@ import PromptCardList from './PromptCardList'
 
 const Feed = () => {
   const [prompts, setPrompts]=useState([]);
-  const [searchText, setSearchText]=useState("");
+  // const [searchText, setSearchText]=useState("");
   useEffect(()=>{
     const fetchPrompts=async ()=>{
       const response= await fetch('/api/prompt');
@@ -24,8 +24,8 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <h1 className="head_text text-left w-full mb-8">Feed</h1>
-      <form className="relative w-full flex-center">
+      <h1 className="head_text text-left  w-full mb-8">Feed</h1>
+      {/* <form className="relative w-full flex-center">
         <input 
         type="text"
         placeholder="Search for a tag or username..."
@@ -34,7 +34,7 @@ const Feed = () => {
         required
         className="search_input peer"
         />
-      </form>
+      </form> */}
 
       <PromptCardList
         data={prompts}
