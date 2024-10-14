@@ -4,15 +4,20 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import {signIn, signOut, useSession, getProviders} from "next-auth/react"
+import { useRouter } from "next/navigation";
 
 
 const Nav = () => {
+    const router=useRouter();
 
     const [isUserLoggedIn, setIsUserLoggedIn]=useState(true);
     const handleSignOut=()=>{
         const confirmationUser=confirm("Are you sure you want to Sign out?");
-        if(confirmationUser)
+        if(confirmationUser){
             signOut();
+            router.push("/");
+
+        }
     }
 
     const {data:session}= useSession();

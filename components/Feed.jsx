@@ -10,7 +10,7 @@ const Feed = () => {
   // const [searchText, setSearchText]=useState("");
   useEffect(()=>{
     const fetchPrompts=async ()=>{
-      const response= await fetch('/api/prompt');
+      const response= await fetch('/api/prompt', {next: {revalidate:0}});
       const data=await response.json();
       setPrompts(data);
     }
